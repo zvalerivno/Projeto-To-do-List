@@ -1,0 +1,10 @@
+{
+  "name": "login-ejs",
+  "version": "1.0.0",
+  "description": "Pagina de login com Node, Express e EJS",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.22.2"
+  }
+}

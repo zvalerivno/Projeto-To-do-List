@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TarefaFlow - Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="pagina-login">
+
+        <div class="lado-formulario">
+            <img src="img/logo.png" alt="TarefaFlow" class="logo">
+
+            <h1>Bem-vindo(a) de volta!</h1>
+
+            <form action="/login" method="POST">
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Insira seu usuário..." required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Insira sua senha..." required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <a href="/cadastro" class="link-esqueci">Não tem conta? Cadastre-se</a>
+        </div>
+
+        <div class="lado-imagem">
+            <img src="img/ImgHero.png" alt="Painel de tarefas TarefaFlow">
+        </div>
+
+    </div>
+
+</body>
+</html>
