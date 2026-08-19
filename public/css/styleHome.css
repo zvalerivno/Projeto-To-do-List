@@ -231,8 +231,19 @@ a { color: inherit; }
 /* ===== Features ===== */
 
 .features {
+    min-height: 80vh;
     padding: 80px 8%;
     background: var(--bg-soft);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    align-items: start;
 }
 
 .features-titulo {
@@ -248,12 +259,6 @@ a { color: inherit; }
     color: var(--text-muted);
     font-size: 16px;
     margin: 0 0 40px;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
 }
 
 .feature-card {
@@ -320,9 +325,8 @@ a { color: inherit; }
 .cta {
     padding: 70px 8%;
     text-align: center;
-    background:
-        radial-gradient(600px 220px at 50% 0%, rgba(18, 160, 215, 0.10), transparent 70%),
-        var(--bg);
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .cta h2 {
