@@ -35,7 +35,7 @@ body {
 img { display: block; max-width: 100%; }
 a { color: inherit; }
 
-/* ===== Header ===== */
+/* Header */
 
 .header-container {
     height: 80px;
@@ -87,7 +87,7 @@ a { color: inherit; }
     align-items: center;
 }
 
-/* ===== BotÃƒÂµes ===== */
+/* Botões */
 
 .btn-primario,
 .btn-secundario {
@@ -226,7 +226,7 @@ p {
     color: var(--text-dark);
 }
 
-/* ===== Sobre — Hero ===== */
+/* Sobre — Hero */
 
 .sobre-hero {
     padding: 0 8% 50px;
@@ -297,7 +297,7 @@ p {
     text-decoration: underline;
 }
 
-/* ===== Sobre — Seções ===== */
+/* Sobre — Seções */
 
 .sobre-section {
     padding: 70px 8%;
@@ -331,7 +331,7 @@ p {
     text-align: center;
 }
 
-/* ===== Missão / Visão / Valores — usa .feature-card da home ===== */
+/* Missão / Visão / Valores — usa .feature-card da home */
 
 .mvv-grid {
     display: grid;
@@ -353,7 +353,36 @@ p {
     overflow: hidden;
 }
 
+.mvv-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: var(--grad-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.mvv-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(10, 148, 167, 0.30);
+}
+
+.mvv-card:hover::before {transform: scaleX(1);}
+
+
 .mvv-icone {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(10, 148, 167, 0.10);
+    color: var(--brand);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
     margin-bottom: 14px;
 }
 
@@ -379,7 +408,7 @@ p {
     margin: 0 0 26px;
 }
 
-/* ===== Footer ===== */
+/* Footer */
 
 footer {
     background:
@@ -492,4 +521,3 @@ footer > img {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     text-align: center;
 }
-

@@ -96,7 +96,7 @@ a { color: inherit; }
     align-items: center;
 }
 
-/* ===== BotÃƒÂµes ===== */
+/* Botões */
 
 .btn-primario,
 .btn-secundario {
@@ -145,7 +145,7 @@ a { color: inherit; }
     border-radius: 10px;
 }
 
-/* ===== Hero ===== */
+/* Hero */
 
 .hero {
     display: grid;
@@ -220,7 +220,24 @@ a { color: inherit; }
     align-items: center;
     justify-content: center;
     border: 1px solid rgba(10, 148, 167, 0.10);
+    
 }
+
+@media screen and (min-width: 1500px) {
+    .hero-imagem {
+        background: var(--grad-soft);
+        border-radius: 14px;
+        width: 800px;
+        height: 500px;
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(10, 148, 167, 0.10);
+        
+    }
+  }
 
 .hero-imagem img {
     width: 100%;
@@ -228,7 +245,7 @@ a { color: inherit; }
     object-fit: cover;
 }
 
-/* ===== Features ===== */
+/* Features */
 
 .features {
     min-height: 80vh;
@@ -320,7 +337,7 @@ a { color: inherit; }
     margin: 0;
 }
 
-/* ===== CTA ===== */
+/* CTA */
 
 .cta {
     padding: 70px 8%;
@@ -342,7 +359,7 @@ a { color: inherit; }
     margin: 0 0 22px;
 }
 
-/* ===== Footer ===== */
+/* Footer */
 
 .footer {
     background:
