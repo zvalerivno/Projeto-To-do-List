@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Tarefas</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Único para Tarefas -->
+    <link rel="stylesheet" href="css/styleTarefas.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Minhas Tarefas</h1>
+            <a href="#" class="btn-add">Adicionar Nova Tarefa</a>
+        </div>
+
+        <!-- Barra de Filtros e Pesquisa -->
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Pesquisar tarefas...">
+            </div>
+            <button class="filter-btn">
+                Filtro <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+
+        <!-- Lista de Tarefas -->
+        <div class="task-list">
+            <% if (typeof tarefas !== 'undefined' && tarefas.length > 0) { %>
+                <% tarefas.forEach(function(tarefa) { %>
+                    <div class="task-card <%= tarefa.concluida ? 'completed' : '' %>">
+                        <div class="task-left">
+                            <i class="<%= tarefa.concluida ? 'fa-solid fa-square-check' : 'fa-regular fa-circle' %> task-status-icon"></i>
+                            <span class="task-title"><%= tarefa.titulo %></span>
+                        </div>
+                        <div class="task-right">
+                            <% if (tarefa.categoria) { %>
+                                <span class="badge badge-category"><%= tarefa.categoria %></span>
+                            <% } %>
+                            <% if (tarefa.prioridade) { %>
+                                <span class="badge badge-priority-<%= tarefa.prioridade.toLowerCase() %>">
+                                    <i class="fa-solid fa-flag"></i> <%= tarefa.prioridade %>
+                                </span>
+                            <% } %>
+                            <span class="task-date"><%= tarefa.dataVencimento %></span>
+                            <div class="action-menu">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <div class="dropdown">
+                                    <a href="/tarefas/editar/<%= tarefa.id %>"><i class="fa-regular fa-pen-to-square"></i> Editar</a>
+                                    <a href="/tarefas/excluir/<%= tarefa.id %>"><i class="fa-regular fa-trash-can"></i> Excluir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+
+
+                <!-- Exemplo -->
+                <div class="task-card">
+                    <div class="task-left">
+                        <i class="fa-regular fa-circle task-status-icon"></i>
+                        <span class="task-title">Finalizar relatório mensal (Outubro)</span>
+                    </div>
+                    <div class="task-right">
+                        <span class="badge badge-category">Vendas</span>
+                        <span class="badge badge-priority-urgente"><i class="fa-solid fa-flag"></i> Urgente</span>
+                        <span class="task-date">15 de Outubro</span>
+                        <div class="action-menu">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <div class="dropdown">
+                                <a href="#"><i class="fa-regular fa-pen-to-square"></i> Editar</a>
+                                <a href="#"><i class="fa-regular fa-trash-can"></i> Excluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+
+        <div class="footer-info">
+            Total de tarefas
+        </div>
+    </div>
+
+    <div class="copyright">
+        © 2026 Tarefa Flow. Todos os direitos reservados.
+    </div>
+
+</body>
+</html>

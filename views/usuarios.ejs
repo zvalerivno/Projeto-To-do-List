@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Único para Usuários -->
+    <link rel="stylesheet" href="css/styleUsuarios.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Usuários do Sistema</h1>
+            <a href="#" class="btn-add">Novo Usuário</a>
+        </div>
+
+        <!-- Pesquisa -->
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Pesquisar usuários por nome ou e-mail...">
+            </div>
+        </div>
+
+        <!-- Lista de Usuários -->
+        <div class="user-list">
+            <% if (typeof usuarios !== 'undefined' && usuarios.length > 0) { %>
+                <% usuarios.forEach(function(usuario) { %>
+                    <div class="user-card">
+                        <div class="user-info">
+                            <div class="user-avatar">
+                                <%= usuario.nome.charAt(0).toUpperCase() %>
+                            </div>
+                            <div class="user-details">
+                                <span class="user-name"><%= usuario.nome %></span>
+                                <span class="user-email"><%= usuario.email %></span>
+                            </div>
+                        </div>
+                        <div class="user-right">
+                            <span class="badge-role"><%= usuario.cargo || 'Membro' %></span>
+                            <div class="action-menu">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <div class="dropdown">
+                                    <a href="/usuarios/editar/<%= usuario.id %>"><i class="fa-regular fa-pen-to-square"></i> Editar</a>
+                                    <a href="/usuarios/excluir/<%= usuario.id %>"><i class="fa-regular fa-trash-can"></i> Excluir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+
+                <!-- Exemplo -->
+                <div class="user-card">
+                    <div class="user-info">
+                        <div class="user-avatar">PM</div>
+                        <div class="user-details">
+                            <span class="user-name">Pedro Moura</span>
+                            <span class="user-email">pedro.moura@tarefaflow.com</span>
+                        </div>
+                    </div>
+                    <div class="user-right">
+                        <span class="badge-role">Administrador</span>
+                        <div class="action-menu">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <div class="dropdown">
+                                <a href="#"><i class="fa-regular fa-pen-to-square"></i> Editar</a>
+                                <a href="#"><i class="fa-regular fa-trash-can"></i> Excluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo -->
+                <div class="user-card">
+                    <div class="user-info">
+                        <div class="user-avatar">D</div>
+                        <div class="user-details">
+                            <span class="user-name">Diego</span>
+                            <span class="user-email">diego.valeriano@tarefaflow.com</span>
+                        </div>
+                    </div>
+                    <div class="user-right">
+                        <span class="badge-role">Administrador</span>
+                        <div class="action-menu">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <div class="dropdown">
+                                <a href="#"><i class="fa-regular fa-pen-to-square"></i> Editar</a>
+                                <a href="#"><i class="fa-regular fa-trash-can"></i> Excluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo -->
+                <div class="user-card">
+                    <div class="user-info">
+                        <div class="user-avatar">M</div>
+                        <div class="user-details">
+                            <span class="user-name">Matheus</span>
+                            <span class="user-email">matheus.mendes@tarefaflow.com</span>
+                        </div>
+                    </div>
+                    <div class="user-right">
+                        <span class="badge-role">Administrador</span>
+                        <div class="action-menu">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <div class="dropdown">
+                                <a href="#"><i class="fa-regular fa-pen-to-square"></i> Editar</a>
+                                <a href="#"><i class="fa-regular fa-trash-can"></i> Excluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo -->
+                <div class="user-card">
+                    <div class="user-info">
+                        <div class="user-avatar">E</div>
+                        <div class="user-details">
+                            <span class="user-name">Erick</span>
+                            <span class="user-email">erick.pinto.murcho@tarefaflow.com</span>
+                        </div>
+                    </div>
+                    <div class="user-right">
+                        <span class="badge-role">Administrador</span>
+                        <div class="action-menu">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <div class="dropdown">
+                                <a href="#"><i class="fa-regular fa-pen-to-square"></i> Editar</a>
+                                <a href="#"><i class="fa-regular fa-trash-can"></i> Excluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo -->
+                <div class="user-card">
+                    <div class="user-info">
+                        <div class="user-avatar">A</div>
+                        <div class="user-details">
+                            <span class="user-name">Alan</span>
+                            <span class="user-email">alan.vidal@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="user-right">
+                        <span class="badge-role">Usuario</span>
+                        <div class="action-menu">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <div class="dropdown">
+                                <a href="#"><i class="fa-regular fa-pen-to-square"></i> Editar</a>
+                                <a href="#"><i class="fa-regular fa-trash-can"></i> Excluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="copyright">
+        © 2026 Tarefa Flow. Todos os direitos reservados.
+    </div>
+
+</body>
+</html>
