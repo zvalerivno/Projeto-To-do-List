@@ -48,6 +48,19 @@ app.post('/cadastro', (req, res) => {
     res.render('cadastro', { usuario: usuario });
 });
 
+// Página Tarefas
+
+app.get('/tarefas', (req, res) => {
+    res.render('tarefas');
+});
+
+// Página Usuarios
+
+app.get('/usuarios', (req, res) => {
+    res.render('usuarios');
+});
+
+
 app.listen(8081, () => {
     console.log('Servidor executando em http://localhost:8081');
 });
