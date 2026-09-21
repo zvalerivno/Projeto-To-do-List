@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --bg: #F5F6F7;
+    --bg-soft: #FFFFFF;
+    --brand: #0a94a7;
+    --brand-light: #12A0D7;
+    --brand-accent: #16B8A6;
+    --text-dark: #2D3E50;
+    --text-muted: #2E2E2E;
+    --border-soft: rgb(206, 196, 196);
+    --grad-primary: linear-gradient(90deg, #12A0D7, #16B8A6);
+    --grad-soft: linear-gradient(135deg, #E8F7F4 0%, #D6EFFA 100%);
+    --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.08);
+    --shadow-card-hover: 0 18px 36px rgba(0, 0, 0, 0.18);
+    --radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--bg-soft);
+    width: 100%;
+    max-width: 850px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.btn-add {
+    background: var(--grad-primary);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.2s;
+}
+
+.btn-add:hover {
+    opacity: 0.9;
+}
+
+/* Pesquisa */
+.search-filter-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.search-box {
+    flex: 1;
+    position: relative;
+}
+
+.search-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8a94a6;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 12px 10px 36px;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    outline: none;
+    font-size: 14px;
+}
+
+/* Lista de Usuários */
+.user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.user-card {
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.user-card:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--grad-soft);
+    color: var(--brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.user-email {
+    font-size: 12px;
+    color: #718096;
+}
+
+.user-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.badge-role {
+    background-color: #E8F7F4;
+    color: var(--brand);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+.action-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.action-menu i {
+    color: #a0aec0;
+    padding: 5px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    z-index: 10;
+    width: 110px;
+}
+
+.action-menu:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.dropdown a:hover {
+    background-color: #f7fafc;
+}
+
+.copyright {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #a0aec0;
+    text-align: center;
+}
