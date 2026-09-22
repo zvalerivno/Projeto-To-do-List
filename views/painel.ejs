@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle - TarefaFlow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="stylesheet" href="css/stylePainel.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="img/logo.png" alt="TarefaFlow">
+            </a>
+
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/sobre">Sobre</a>
+                <a href="/devs">Devs</a>
+            </nav>
+
+            <div class="acoes-header">
+                <a href="/painel" class="btn-secundario">Painel</a>
+                <a href="/" class="btn-primario">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="painel-main">
+        <section class="painel-intro">
+            <span class="painel-kicker">Área administrativa</span>
+            <h1>Olá, <%= typeof usuario !== 'undefined' && usuario ? usuario : 'Visitante' %>!</h1>
+            <p>Bem-vindo ao painel de controle. O que você deseja gerenciar hoje?</p>
+        </section>
+
+        <div class="menu-grid">
+            <a href="/tarefas" class="menu-card">
+                <span class="menu-card-icon"><i class="fa-solid fa-list-check"></i></span>
+                <span class="menu-card-content">
+                    <strong>Minhas tarefas</strong>
+                    <small>Organize e acompanhe suas atividades.</small>
+                </span>
+                <i class="fa-solid fa-arrow-right menu-card-arrow"></i>
+            </a>
+            
+            <a href="/usuarios" class="menu-card">
+                <span class="menu-card-icon"><i class="fa-solid fa-users"></i></span>
+                <span class="menu-card-content">
+                    <strong>Gerenciar usuários</strong>
+                    <small>Consulte e administre os usuários do sistema.</small>
+                </span>
+                <i class="fa-solid fa-arrow-right menu-card-arrow"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="text-footer">
+                <img src="img/logo.png" alt="TarefaFlow">
+                <p>Junte-se a milhões de pessoas que organizam trabalho e vida pessoal com TarefaFlow.</p>
+                <div class="icons-footer">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fa-brands fa-google"></i>
+                </div>
+            </div>
+
+            <div class="footer-colunas">
+                <div class="colun-footer">
+                    <h5>Ferramentas</h5>
+                    <ul>
+                        <li><a href="/tarefas">Tarefas</a></li>
+                        <li><a href="/usuarios">Usuários</a></li>
+                        <li><a href="/painel">Painel</a></li>
+                    </ul>
+                </div>
+                <div class="colun-footer">
+                    <h5>Recursos</h5>
+                    <ul>
+                        <li><a href="/sobre">Sobre nós</a></li>
+                        <li><a href="/devs">Desenvolvedores</a></li>
+                        <li><a href="/">Página inicial</a></li>
+                    </ul>
+                </div>
+                <div class="colun-footer">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="/sobre">Nossa missão</a></li>
+                        <li><a href="/devs">Nossa equipe</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="autorais">
+            <p>© 2026 TarefaFlow. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

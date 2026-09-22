@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas - TarefaFlow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="stylesheet" href="css/styleTarefas.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="img/logo.png" alt="TarefaFlow">
+            </a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/sobre">Sobre</a>
+                <a href="/devs">Devs</a>
+            </nav>
+            <div class="acoes-header">
+                <a href="/painel" class="btn-secundario">Painel</a>
+                <a href="/" class="btn-primario">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Minhas Tarefas</h1>
+            <a href="#" class="btn-add">Adicionar Nova Tarefa</a>
+        </div>
+
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Pesquisar tarefas...">
+            </div>
+            <button class="filter-btn">
+                Filtro <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+
+        <div class="task-list">
+            <% if (typeof tarefas !== 'undefined' && tarefas.length > 0) { %>
+                <% tarefas.forEach(function(tarefa) { %>
+                    <div class="task-card <%= tarefa.status === 'Concluído' ? 'completed' : '' %>">
+                        <div class="task-left">
+                            <i class="<%= tarefa.status === 'Concluído' ? 'fa-solid fa-square-check' : 'fa-regular fa-circle' %> task-status-icon"></i>
+                            <span class="task-title"><%= tarefa.descricao %></span>
+                        </div>
+                        <div class="task-right">
+                            <span class="badge badge-category"><%= tarefa.status %></span>
+                            <div class="action-menu">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <div class="dropdown">
+                                    <a href="#"><i class="fa-regular fa-pen-to-square"></i> Editar</a>
+                                    <a href="#"><i class="fa-regular fa-trash-can"></i> Excluir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p style="text-align: center; color: #718096; margin-top: 20px;">Nenhuma tarefa encontrada no banco de dados.</p>
+            <% } %>
+        </div>
+
+        <div class="footer-info">
+            Total de tarefas: <%= typeof tarefas !== 'undefined' ? tarefas.length : 0 %>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="text-footer">
+                <img src="img/logo.png" alt="TarefaFlow">
+                <p>Junte-se a milhões de pessoas que organizam trabalho e vida pessoal com TarefaFlow.</p>
+                <div class="icons-footer">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fa-brands fa-google"></i>
+                </div>
+            </div>
+            <div class="footer-colunas">
+                <div class="colun-footer">
+                    <h5>Ferramentas</h5>
+                    <ul>
+                        <li><a href="/tarefas">Tarefas</a></li>
+                        <li><a href="/usuarios">Usuários</a></li>
+                        <li><a href="/painel">Painel</a></li>
+                    </ul>
+                </div>
+                <div class="colun-footer">
+                    <h5>Recursos</h5>
+                    <ul>
+                        <li><a href="/sobre">Sobre nós</a></li>
+                        <li><a href="/devs">Desenvolvedores</a></li>
+                        <li><a href="/">Página inicial</a></li>
+                    </ul>
+                </div>
+                <div class="colun-footer">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="/sobre">Nossa missão</a></li>
+                        <li><a href="/devs">Nossa equipe</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="autorais">
+            <p>© 2026 TarefaFlow. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

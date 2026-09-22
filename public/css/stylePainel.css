@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --bg: #F5F6F7;
+    --bg-soft: #FFFFFF;
+    --brand: #0a94a7;
+    --brand-light: #12A0D7;
+    --brand-accent: #16B8A6;
+    --text-dark: #2D3E50;
+    --text-muted: #5f6f7d;
+    --border-soft: rgba(206, 196, 196, 0.75);
+    --grad-primary: linear-gradient(90deg, #12A0D7, #16B8A6);
+    --grad-soft: linear-gradient(135deg, #E8F7F4 0%, #D6EFFA 100%);
+    --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.08);
+    --shadow-card-hover: 0 18px 36px rgba(0, 0, 0, 0.16);
+    --radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    background:
+        radial-gradient(800px 300px at 85% 0%, rgba(18, 160, 215, 0.08), transparent 65%),
+        var(--bg);
+    color: var(--text-dark);
+}
+
+.painel-main {
+    width: min(100% - 48px, 1100px);
+    margin: 0 auto;
+    padding: 70px 0 110px;
+}
+
+.painel-intro {
+    max-width: 700px;
+    margin-bottom: 38px;
+}
+
+.painel-kicker {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--brand);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.painel-intro h1 {
+    margin: 0 0 12px;
+    color: var(--text-dark);
+    font-family: "Oswald", "Poppins", sans-serif;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.05;
+}
+
+.painel-intro p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.menu-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 170px;
+    padding: 28px;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    background: var(--bg-soft);
+    box-shadow: var(--shadow-card);
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(10, 148, 167, 0.35);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.menu-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--grad-soft);
+    color: var(--brand);
+    font-size: 28px;
+}
+
+.menu-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.menu-card-content strong {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.menu-card-content small {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.menu-card-arrow {
+    color: var(--brand-light);
+    font-size: 18px;
+    transition: transform 0.25s ease;
+}
+
+.menu-card:hover .menu-card-arrow {
+    transform: translateX(4px);
+}
+
+.footer {
+    margin-top: 0;
+}
+
+@media (max-width: 760px) {
+    .header-container {
+        height: auto;
+        min-height: 80px;
+        padding: 18px 6%;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin: 4px 0 0;
+    }
+
+    .painel-main {
+        width: min(100% - 32px, 640px);
+        padding: 52px 0 76px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 150px;
+    }
+
+    .acoes-header {
+        gap: 6px;
+    }
+
+    .acoes-header .btn-primario,
+    .acoes-header .btn-secundario {
+        height: 36px;
+        padding: 0 12px;
+        font-size: 13px;
+    }
+
+    .nav-links {
+        gap: 18px;
+        font-size: 14px;
+    }
+
+    .painel-intro h1 {
+        font-size: 38px;
+    }
+
+    .menu-card {
+        min-height: 0;
+        padding: 22px 18px;
+    }
+}

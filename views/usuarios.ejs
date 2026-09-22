@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários - TarefaFlow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="stylesheet" href="css/styleUsuarios.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="img/logo.png" alt="TarefaFlow">
+            </a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/sobre">Sobre</a>
+                <a href="/devs">Devs</a>
+            </nav>
+            <div class="acoes-header">
+                <a href="/painel" class="btn-secundario">Painel</a>
+                <a href="/" class="btn-primario">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Usuários do Sistema</h1>
+            <a href="#" class="btn-add">Novo Usuário</a>
+        </div>
+
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Pesquisar usuários por nome ou e-mail...">
+            </div>
+        </div>
+
+        <div class="user-list">
+            <% if (typeof usuarios !== 'undefined' && usuarios.length > 0) { %>
+                <% usuarios.forEach(function(usuario) { %>
+                    <div class="user-card">
+                        <div class="user-info">
+                            <div class="user-avatar">
+                                <%= usuario.nome.charAt(0).toUpperCase() %>
+                            </div>
+                            <div class="user-details">
+                                <span class="user-name"><%= usuario.nome %></span>
+                                <span class="user-email"><%= usuario.email %></span>
+                            </div>
+                        </div>
+                        <div class="user-right">
+                            <span class="badge-role"><%= usuario.cargo || 'Membro' %></span>
+                            <div class="action-menu">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <div class="dropdown">
+                                    <a href="#"><i class="fa-regular fa-pen-to-square"></i> Editar</a>
+                                    <a href="#"><i class="fa-regular fa-trash-can"></i> Excluir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p style="text-align: center; color: #718096; margin-top: 20px;">Nenhum usuário encontrado no banco de dados.</p>
+            <% } %>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="text-footer">
+                <img src="img/logo.png" alt="TarefaFlow">
+                <p>Junte-se a milhões de pessoas que organizam trabalho e vida pessoal com TarefaFlow.</p>
+                <div class="icons-footer">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fa-brands fa-google"></i>
+                </div>
+            </div>
+            <div class="footer-colunas">
+                <div class="colun-footer">
+                    <h5>Ferramentas</h5>
+                    <ul>
+                        <li><a href="/tarefas">Tarefas</a></li>
+                        <li><a href="/usuarios">Usuários</a></li>
+                        <li><a href="/painel">Painel</a></li>
+                    </ul>
+                </div>
+                <div class="colun-footer">
+                    <h5>Recursos</h5>
+                    <ul>
+                        <li><a href="/sobre">Sobre nós</a></li>
+                        <li><a href="/devs">Desenvolvedores</a></li>
+                        <li><a href="/">Página inicial</a></li>
+                    </ul>
+                </div>
+                <div class="colun-footer">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="/sobre">Nossa missão</a></li>
+                        <li><a href="/devs">Nossa equipe</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="autorais">
+            <p>© 2026 TarefaFlow. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
